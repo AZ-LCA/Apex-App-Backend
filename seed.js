@@ -304,3 +304,12 @@ const weapons = [
     },
 ]
 
+Weapon.insertMany(weapons, (error, weapons) => {
+    if (error) {
+        // show error
+        res.status(500).json( { error: error })
+    } else {
+        // If all is well then display weapons
+        res.status(201).json( { weapons: weapons })
+    }
+});
