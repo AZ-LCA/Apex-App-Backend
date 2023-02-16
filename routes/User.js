@@ -25,7 +25,7 @@ URI:        /api/users
 Description:    Get users by username
 */
 
-router.get('/api/user/:username', (req, res) => {
+router.get('/api/users/:username', (req, res) => {
     User.find({username: req.params.username})
     .then((user) => {
         if (user.length > 0) {
